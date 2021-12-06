@@ -1,13 +1,34 @@
 package com.projetointegrador.model;
 
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
+
 import com.projetointegrador.model.enums.EscolaridadeEnum;
 import com.projetointegrador.model.enums.TemaEnum;
 
-public class TemaModel {
 
+@Entity
+@Table(name = "tb_tema")
+public class TemaModel {
+	
+	@NotBlank
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id_tema;
+	
+	@Enumerated (EnumType.STRING)
 	private TemaEnum tema_enum;
+	
+	@NotBlank
 	private String subtema;
+	
+	@Enumerated (EnumType.STRING)
 	private EscolaridadeEnum escolaridade;
 
 	public Long getId_tema() {
