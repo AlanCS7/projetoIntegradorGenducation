@@ -12,31 +12,30 @@ import javax.validation.constraints.NotBlank;
 import com.projetointegrador.model.enums.EscolaridadeEnum;
 import com.projetointegrador.model.enums.TemaEnum;
 
-
 @Entity
 @Table(name = "tb_tema")
 public class TemaModel {
-	
+
 	@NotBlank
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id_tema;
-	
-	@Enumerated (EnumType.STRING)
+	private Long idTema;
+
+	@Enumerated(EnumType.STRING)
 	private TemaEnum tema_enum;
-	
+
 	@NotBlank
 	private String subtema;
-	
-	@Enumerated (EnumType.STRING)
+
+	@Enumerated(EnumType.STRING)
 	private EscolaridadeEnum escolaridade;
 
-	public Long getId_tema() {
-		return id_tema;
+	public Long getIdTema() {
+		return idTema;
 	}
 
-	public void setId_tema(Long id_tema) {
-		this.id_tema = id_tema;
+	public void setIdTema(Long idTema) {
+		this.idTema = idTema;
 	}
 
 	public TemaEnum getTema_enum() {
