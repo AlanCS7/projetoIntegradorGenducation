@@ -15,5 +15,7 @@ public interface TemaRepository extends JpaRepository<TemaModel, Long> {
 	public List<TemaModel> findAllByTemaEnum(TemaEnum temaEnum);
 
 	public List<TemaModel> findAllByEscolaridade(EscolaridadeEnum escolaridadeEnum);
+
+	public List<TemaModel> findAllBySubtemaContainingIgnoreCase(String subtema);
 	
 }
