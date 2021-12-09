@@ -17,7 +17,6 @@ import com.projetointegrador.model.enums.TemaEnum;
 @Table(name = "tb_tema")
 public class TemaModel {
 
-	@NotBlank
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idTema;
