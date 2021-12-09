@@ -24,11 +24,12 @@ public class TemaModel {
 
 	@Column(columnDefinition = "ENUM('EXATAS', 'HUMANAS', 'BIOLOGICAS', 'TECNOLOGIA', 'LIVRE')")
 	@Enumerated(EnumType.STRING)
-	private TemaEnum tema_enum;
+	private TemaEnum temaEnum;
 
 	@NotBlank
 	private String subtema;
 
+	@Column(columnDefinition = "ENUM('ALFABETIZACAO', 'ENSINO_FUNDAMENTAL', 'ENSINO_MEDIO', 'ENSINO_SUPERIOR', 'LIVRE')")
 	@Enumerated(EnumType.STRING)
 	private EscolaridadeEnum escolaridade;
 
@@ -40,12 +41,12 @@ public class TemaModel {
 		this.idTema = idTema;
 	}
 
-	public TemaEnum getTema_enum() {
-		return tema_enum;
+	public TemaEnum getTemaEnum() {
+		return temaEnum;
 	}
 
-	public void setTema_enum(TemaEnum tema_enum) {
-		this.tema_enum = tema_enum;
+	public void setTemaEnum(TemaEnum temaEnum) {
+		this.temaEnum = temaEnum;
 	}
 
 	public String getSubtema() {
