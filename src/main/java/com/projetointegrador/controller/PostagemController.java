@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
 @RestController
-@RequestMapping("/postagens")
+@RequestMapping("/Genducation/postagens")
 @CrossOrigin("*")
 public class PostagemController {
 
@@ -30,7 +30,7 @@ public class PostagemController {
 
 	// GET ALL
 	@GetMapping
-	public ResponseEntity<List<PostagemModel>> GetAll() {
+	public ResponseEntity<List<PostagemModel>> getAll() {
 		return ResponseEntity.ok(repository.findAll());
 	}
 
@@ -43,13 +43,13 @@ public class PostagemController {
 
 	// GET BY TITULO
 	@GetMapping("/titulo/{titulo}")
-	public ResponseEntity<List<PostagemModel>> GetByTitulo(@PathVariable String titulo) {
+	public ResponseEntity<List<PostagemModel>> getByTitulo(@PathVariable String titulo) {
 		return ResponseEntity.ok(repository.findAllByTituloContainingIgnoreCase(titulo));
 	}
 
 	// GET BY POSTAGEM
 	@GetMapping("/postagem/{postagem}")
-	public ResponseEntity<List<PostagemModel>> GetByTitulo(@PathVariable String postagem) {
+	public ResponseEntity<List<PostagemModel>> getByPostagem(@PathVariable String postagem) {
 		return ResponseEntity.ok(repository.findAllByPostagemContainingIgnoreCase(postagem));
 	}
 

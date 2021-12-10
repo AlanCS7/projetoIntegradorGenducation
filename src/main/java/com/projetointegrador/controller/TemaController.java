@@ -34,7 +34,7 @@ public class TemaController {
 
 	// GET ALL
 	@GetMapping
-	public ResponseEntity<List<TemaModel>> GetAll() {
+	public ResponseEntity<List<TemaModel>> getAll() {
 		return ResponseEntity.ok(repository.findAll());
 	}
 
