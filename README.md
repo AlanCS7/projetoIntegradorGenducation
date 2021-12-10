@@ -26,14 +26,15 @@
 - [Java 11](https://www.oracle.com/br/java/)
 - [Spring Boot](https://spring.io/projects/spring-boot)
 
-### TeamDev
-<table>
+<h1 align = "center">
+TeamDev
+	</h1>
+<table align = "center">
   <tr>
     <td align="center"><a href="https://github.com/fabricior0cha"><a><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/90473184?v=4" width="100px;" alt=""/><br /><sub><b>Fabricio</b></sub></a><br /></td>
     <td align="center"><a href="https://github.com/AlanCS7"><a><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/54875275?v=4" width="100px;" alt=""/><br /><sub><b>Alan Carlos</b></sub></a><br /></td>
     <td align="center"><a href="https://github.com/guiAdaCruz"><a><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/93786861?v=4" width="100px;" alt=""/><br /><sub><b>Guilherme</b></sub></a><br /></td>
     <td align="center"><a href="https://github.com/JosianeCaroliny"><a><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/88409137?v=4" width="100px;" alt=""/><br /><sub><b>Josiane</b></sub></a><br /></td>
-   </tr>
    <td align="center"><a href="https://github.com/WesNinaja"><a><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/92834556?v=4" width="100px;" alt=""/><br /><sub><b>Wesley</b></sub></a><br /></td>
   <td align="center"><a href="https://github.com/LucasCostaMelo"><a><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/93784723?v=4" width="100px;" alt=""/><br /><sub><b>Lucas</b></sub></a><br /></td>
 </table>
