@@ -17,9 +17,9 @@
 </h4>
 
 ### Features
-- [X] Cadrasto de Tema
-- [ ] Cadrasto de Usuário
-- [ ] Cadrasto de Postagem
+- [X] Cadastro de Tema
+- [ ] Cadastro de Usuário
+- [ ] Cadastro de Postagem
 
 
 ###  Tecnologias
