@@ -13,9 +13,9 @@ import javax.validation.constraints.Size;
 @Table(name = "tb_usuario")
 public class UsuarioModel {
 
-	private @Id @GeneratedValue(strategy = GenerationType.IDENTITY) @Email String email;
+	private @Id @Email String email;
 
-	private @NotBlank @Size(min = 35, max = 100 ) String nomeCompleto;
+	private @NotBlank @Size(min = 35, max = 100) String nomeCompleto;
 
 	private @NotBlank @Size(min = 8, max = 30) String senha;
 
