@@ -2,7 +2,6 @@ package com.projetointegrador.model.dtos;
 
 public class UsuarioCredenciaisDTO {
 
-	private String idUsuario;
 	private String email;
 	private String token;
 	private String tokenBasic;
@@ -10,20 +9,12 @@ public class UsuarioCredenciaisDTO {
 	public UsuarioCredenciaisDTO() {
 	}
 
-	public UsuarioCredenciaisDTO(String idUsuario, String email, String token, String tokenBasic) {
-		this.idUsuario = idUsuario;
+	public UsuarioCredenciaisDTO(String email, String token, String tokenBasic) {
 		this.email = email;
 		this.token = token;
 		this.tokenBasic = tokenBasic;
 	}
 	
-	public String getIdUsuario() {
-		return idUsuario;
-	}
-
-	public void setIdUsuario(String idUsuario) {
-		this.idUsuario = idUsuario;
-	}
 
 	public String getEmail() {
 		return email;

@@ -7,9 +7,6 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -17,11 +14,11 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Table(name = "tb_usuario")
 public class UsuarioModel {
 
-	private @Id @Email String email;
+	private @Id String email;
 
-	private @NotBlank @Size(min = 8, max = 100) String nomeCompleto;
+	private String nomeCompleto;
 
-	private @NotBlank @Size(min = 8, max = 30) String senha;
+	private String senha;
 	
 	private String token;
 
