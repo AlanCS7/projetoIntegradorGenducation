@@ -6,6 +6,7 @@ import java.util.Optional;
 import javax.validation.Valid;
 
 import org.apache.commons.codec.binary.Base64;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -20,7 +21,8 @@ import com.projetointegrador.repository.UsuarioRepository;
 
 @Service
 public class UserServices {
-
+	
+	@Autowired
 	private UsuarioRepository repository;
 	private UsuarioCredenciaisDTO credentials;
 

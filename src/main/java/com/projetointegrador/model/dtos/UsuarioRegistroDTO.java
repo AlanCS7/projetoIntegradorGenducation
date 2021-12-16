@@ -11,7 +11,7 @@ public class UsuarioRegistroDTO {
 
 	private @NotBlank @Size(min = 8, max = 100) String nomeCompleto;
 
-	private @NotBlank @Size(min = 8, max = 30) String senha;
+	private @NotBlank @Size(min = 5, max = 30) String senha;
 
 	public UsuarioRegistroDTO() {
 	}
