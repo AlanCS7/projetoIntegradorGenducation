@@ -22,6 +22,8 @@ public class UsuarioModel {
 	private @NotBlank @Size(min = 8, max = 100) String nomeCompleto;
 
 	private @NotBlank @Size(min = 8, max = 30) String senha;
+	
+	private String token;
 
 	@OneToMany(mappedBy = "usuario", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("usuario")
@@ -59,4 +61,11 @@ public class UsuarioModel {
 		this.postagens = postagens;
 	}
 
+	public String getToken() {
+		return token;
+	}
+
+	public void setToken(String token) {
+		this.token = token;
+	}
 }
