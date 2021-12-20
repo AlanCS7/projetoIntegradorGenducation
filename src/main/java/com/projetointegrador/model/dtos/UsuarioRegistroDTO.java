@@ -3,11 +3,14 @@ package com.projetointegrador.model.dtos;
 import javax.persistence.Id;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
+import io.swagger.v3.oas.annotations.media.Schema;
 
 public class UsuarioRegistroDTO {
 	
-	private @Id @Email String email;
+	private @Id @Email(message = "O atributo Usuário deve ser um email válido!") @Schema(example = "email@email.com.br") String email;
 
 	private @NotBlank @Size(min = 8, max = 100) String nomeCompleto;
 
