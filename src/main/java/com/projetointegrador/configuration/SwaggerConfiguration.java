@@ -16,7 +16,7 @@ import io.swagger.v3.oas.models.responses.ApiResponses;
 public class SwaggerConfiguration {
 
 	@Bean
-	public OpenAPI springBlogPessoalOpenAPI() {
+	public OpenAPI springProjetoIntegradorOpenAPI() {
 		return new OpenAPI()
 				.info(new Info()
 					.title("Projeto Integrador")
