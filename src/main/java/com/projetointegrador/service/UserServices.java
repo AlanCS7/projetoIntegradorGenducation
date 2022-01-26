@@ -56,6 +56,7 @@ public class UserServices {
 			user.setEmail(newUser.getEmail());
 			user.setToken(generatorToken(newUser.getEmail(), newUser.getSenha()));
 			user.setSenha(encryptPassword(newUser.getSenha()));
+			user.setTipo(newUser.getTipo());
 			return ResponseEntity.status(201).body(repository.save(user));
 		}
 	}
@@ -68,6 +69,8 @@ public class UserServices {
 				
 				credentials = new UsuarioCredenciaisDTO();
 				credentials.setEmail(resp.getEmail());
+				credentials.setNomeCompleto(resp.getNomeCompleto());
+				credentials.setTipo(resp.getTipo());
 				credentials.setToken(resp.getToken());
 				credentials.setTokenBasic(generatorTokenBasic(userDto.getEmail(), userDto.getSenha()));
 				

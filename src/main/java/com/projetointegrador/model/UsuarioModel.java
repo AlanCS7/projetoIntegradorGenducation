@@ -19,8 +19,10 @@ public class UsuarioModel {
 	private String nomeCompleto;
 
 	private String senha;
-	
+
 	private String token;
+
+	private String tipo;
 
 	@OneToMany(mappedBy = "usuario", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("usuario")
@@ -64,5 +66,13 @@ public class UsuarioModel {
 
 	public void setToken(String token) {
 		this.token = token;
+	}
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
 	}
 }

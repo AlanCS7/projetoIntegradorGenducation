@@ -9,20 +9,23 @@ import javax.validation.constraints.Size;
 import io.swagger.v3.oas.annotations.media.Schema;
 
 public class UsuarioRegistroDTO {
-	
+
 	private @Id @Email(message = "O atributo Usuário deve ser um email válido!") @Schema(example = "email@email.com.br") String email;
 
 	private @NotBlank @Size(min = 8, max = 100) String nomeCompleto;
 
 	private @NotBlank @Size(min = 5, max = 30) String senha;
 
+	private @NotBlank String tipo;
+
 	public UsuarioRegistroDTO() {
 	}
-		
-	public UsuarioRegistroDTO(String email, String nomeCompleto, String senha) {
+
+	public UsuarioRegistroDTO(String email, String nomeCompleto, String senha, String tipo) {
 		this.email = email;
 		this.nomeCompleto = nomeCompleto;
 		this.senha = senha;
+		this.tipo = tipo;
 	}
 
 	public String getEmail() {
@@ -47,5 +50,13 @@ public class UsuarioRegistroDTO {
 
 	public void setSenha(String senha) {
 		this.senha = senha;
+	}
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
 	}
 }
