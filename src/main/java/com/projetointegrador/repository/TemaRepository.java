@@ -10,9 +10,9 @@ import com.projetointegrador.model.TemaModel;
 @Repository
 public interface TemaRepository extends JpaRepository<TemaModel, Long> {
 
-	public List<TemaModel> findAllByTemaEnum(String tema);
+	public List<TemaModel> findAllByTemaContainingIgnoreCase(String tema);
 
-	public List<TemaModel> findAllByEscolaridade(String escolaridade);
+	public List<TemaModel> findAllByEscolaridadeContainingIgnoreCase(String escolaridade);
 
 	public List<TemaModel> findAllBySubtemaContainingIgnoreCase(String subtema);
 	
