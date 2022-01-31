@@ -19,8 +19,6 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
 import com.projetointegrador.model.TemaModel;
-import com.projetointegrador.model.enums.EscolaridadeEnum;
-import com.projetointegrador.model.enums.TemaEnum;
 import com.projetointegrador.repository.TemaRepository;
 
 @RestController
@@ -32,28 +30,28 @@ public class TemaController {
 	@Autowired
 	private TemaRepository repository;
 
-	// GET ALL
+	
 	@GetMapping
 	public ResponseEntity<List<TemaModel>> getAll() {
 		return ResponseEntity.ok(repository.findAll());
 	}
 
-	// GET BY ID
+	
 	@GetMapping("/{id}")
 	public ResponseEntity<TemaModel> getById(@PathVariable(value = "id") long id) {
 		return repository.findById(id).map(resp -> ResponseEntity.status(200).body(resp))
 				.orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Id não encontrado"));
 	}
 
-	@GetMapping("/nome/{temaEnum}")
-	public ResponseEntity<List<TemaModel>> getTema(@PathVariable(value = "temaEnum") TemaEnum temaEnum) {
-		return ResponseEntity.ok(repository.findAllByTemaEnum(temaEnum));
+	@GetMapping("/nome/{tema}")
+	public ResponseEntity<List<TemaModel>> getTema(@PathVariable(value = "tema") String tema) {
+		return ResponseEntity.ok(repository.findAllByTemaEnum(tema));
 	}
 
-	@GetMapping("/escolaridade/{escolaridadeEnum}")
+	@GetMapping("/escolaridade/{escolaridade}")
 	public ResponseEntity<List<TemaModel>> getEscolaridade(
-			@PathVariable(value = "escolaridadeEnum") EscolaridadeEnum escolaridadeEnum) {
-		return ResponseEntity.ok(repository.findAllByEscolaridade(escolaridadeEnum));
+			@PathVariable(value = "escolaridade") String escolaridade) {
+		return ResponseEntity.ok(repository.findAllByEscolaridade(escolaridade));
 	}
 	
 	@GetMapping("/subtema/{subtema}")
