@@ -30,7 +30,6 @@ public class TemaModel {
 
 	
 	@Enumerated(EnumType.STRING)
-	@Type(type = "tema_enum_type")
 	@Column(columnDefinition = "temaEnum_info")
 	private TemaEnum temaEnum;
 
@@ -38,7 +37,6 @@ public class TemaModel {
 	private String subtema;
 	
 	@Enumerated(EnumType.STRING)
-	@Type(type = "escolaridade_enum_type")
 	@Column(columnDefinition = "escolaridade_infor")
 	private EscolaridadeEnum escolaridade;
 
