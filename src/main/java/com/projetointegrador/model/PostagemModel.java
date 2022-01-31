@@ -1,6 +1,7 @@
 package com.projetointegrador.model;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -10,10 +11,11 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
@@ -32,8 +34,8 @@ public class PostagemModel {
 	@Size(min = 10, max = 500)
 	private String postagem;
 
-	@JsonFormat(pattern = "dd/MM/yyyy HH:mm:ss")
-	private LocalDateTime date = LocalDateTime.now();
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date date = new java.sql.Date(System.currentTimeMillis());
 
 	@Size(max = 1000)
 	private String urlImg;
@@ -72,11 +74,11 @@ public class PostagemModel {
 		this.postagem = postagem;
 	}
 
-	public LocalDateTime getDate() {
+	public Date getDate() {
 		return date;
 	}
 
-	public void setDate(LocalDateTime date) {
+	public void setDate(Date date) {
 		this.date = date;
 	}
 
