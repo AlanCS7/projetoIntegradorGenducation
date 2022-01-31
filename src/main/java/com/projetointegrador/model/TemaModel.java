@@ -14,6 +14,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
+import org.hibernate.annotations.Type;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.projetointegrador.model.enums.EscolaridadeEnum;
 import com.projetointegrador.model.enums.TemaEnum;
@@ -26,15 +28,18 @@ public class TemaModel {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idTema;
 
-	@Column(columnDefinition = "ENUM('EXATAS', 'HUMANAS', 'BIOLOGICAS', 'TECNOLOGIA', 'LIVRE')")
+	
 	@Enumerated(EnumType.STRING)
+	@Type(type = "tema_enum_type")
+	@Column(columnDefinition = "temaEnum_info")
 	private TemaEnum temaEnum;
 
 	@NotBlank
 	private String subtema;
-
-	@Column(columnDefinition = "ENUM('ALFABETIZACAO', 'ENSINO_FUNDAMENTAL', 'ENSINO_MEDIO', 'ENSINO_SUPERIOR', 'LIVRE')")
+	
 	@Enumerated(EnumType.STRING)
+	@Type(type = "escolaridade_enum_type")
+	@Column(columnDefinition = "escolaridade_infor")
 	private EscolaridadeEnum escolaridade;
 
 	@OneToMany(mappedBy = "tema", cascade = CascadeType.REMOVE)
