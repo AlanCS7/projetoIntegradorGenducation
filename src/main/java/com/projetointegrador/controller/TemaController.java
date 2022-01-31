@@ -45,13 +45,13 @@ public class TemaController {
 
 	@GetMapping("/nome/{tema}")
 	public ResponseEntity<List<TemaModel>> getTema(@PathVariable(value = "tema") String tema) {
-		return ResponseEntity.ok(repository.findAllByTemaEnum(tema));
+		return ResponseEntity.ok(repository.findAllByTemaContainingIgnoreCase(tema));
 	}
 
 	@GetMapping("/escolaridade/{escolaridade}")
 	public ResponseEntity<List<TemaModel>> getEscolaridade(
 			@PathVariable(value = "escolaridade") String escolaridade) {
-		return ResponseEntity.ok(repository.findAllByEscolaridade(escolaridade));
+		return ResponseEntity.ok(repository.findAllByEscolaridadeContainingIgnoreCase(escolaridade));
 	}
 	
 	@GetMapping("/subtema/{subtema}")
