@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -42,4 +43,10 @@ public class UsuarioController {
 	public ResponseEntity<?> getProfile(@RequestHeader("Authorization") String auth){
 		return ResponseEntity.status(200).body(repository.findByToken(auth.replace("Basic ", "")));
 	}
+	
+	@GetMapping("/{id}")
+	public ResponseEntity<UsuarioModel> findByEmail(@PathVariable(value = "id") String id) {
+		return ResponseEntity.ok().body(repository.findByEmail(id).get());
+	}
+
 }
