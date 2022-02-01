@@ -14,4 +14,7 @@ public interface PostagemRepository extends JpaRepository<PostagemModel, Long> {
 
 	public List<PostagemModel> findAllByPostagemContainingIgnoreCase(String postagem);
 
+	public List<PostagemModel> findAllByEscolaridadeContainingIgnoreCase(String escolaridade);
+
+	public List<PostagemModel> findAllBySubtemaContainingIgnoreCase(String subtema);
 }

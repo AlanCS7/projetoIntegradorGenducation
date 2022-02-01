@@ -48,18 +48,6 @@ public class TemaController {
 		return ResponseEntity.ok(repository.findAllByTemaContainingIgnoreCase(tema));
 	}
 
-	@GetMapping("/escolaridade/{escolaridade}")
-	public ResponseEntity<List<TemaModel>> getEscolaridade(
-			@PathVariable(value = "escolaridade") String escolaridade) {
-		return ResponseEntity.ok(repository.findAllByEscolaridadeContainingIgnoreCase(escolaridade));
-	}
-	
-	@GetMapping("/subtema/{subtema}")
-	public ResponseEntity<List<TemaModel>> getSubtema(
-			@PathVariable(value = "subtema") String subtema) {
-		return ResponseEntity.ok(repository.findAllBySubtemaContainingIgnoreCase(subtema));
-	}
-
 	@PostMapping("/save")
 	public ResponseEntity<TemaModel> post(@Valid @RequestBody TemaModel tema) {
 		return ResponseEntity.status(201).body(repository.save(tema));

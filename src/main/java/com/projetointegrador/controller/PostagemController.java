@@ -4,8 +4,6 @@ import java.util.List;
 
 import javax.validation.Valid;
 
-import com.projetointegrador.model.PostagemModel;
-import com.projetointegrador.repository.PostagemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,6 +17,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
+
+import com.projetointegrador.model.PostagemModel;
+import com.projetointegrador.repository.PostagemRepository;
 
 @RestController
 @RequestMapping("/Genducation/postagens")
@@ -51,6 +52,18 @@ public class PostagemController {
 	@GetMapping("/postagem/{postagem}")
 	public ResponseEntity<List<PostagemModel>> getByPostagem(@PathVariable String postagem) {
 		return ResponseEntity.ok(repository.findAllByPostagemContainingIgnoreCase(postagem));
+	}
+	
+	@GetMapping("/escolaridade/{escolaridade}")
+	public ResponseEntity<List<PostagemModel>> getEscolaridade(
+			@PathVariable(value = "escolaridade") String escolaridade) {
+		return ResponseEntity.ok(repository.findAllByEscolaridadeContainingIgnoreCase(escolaridade));
+	}
+	
+	@GetMapping("/subtema/{subtema}")
+	public ResponseEntity<List<PostagemModel>> getSubtema(
+			@PathVariable(value = "subtema") String subtema) {
+		return ResponseEntity.ok(repository.findAllBySubtemaContainingIgnoreCase(subtema));
 	}
 
 	@PostMapping("/save")

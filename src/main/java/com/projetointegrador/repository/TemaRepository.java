@@ -11,9 +11,5 @@ import com.projetointegrador.model.TemaModel;
 public interface TemaRepository extends JpaRepository<TemaModel, Long> {
 
 	public List<TemaModel> findAllByTemaContainingIgnoreCase(String tema);
-
-	public List<TemaModel> findAllByEscolaridadeContainingIgnoreCase(String escolaridade);
-
-	public List<TemaModel> findAllBySubtemaContainingIgnoreCase(String subtema);
 	
 }
