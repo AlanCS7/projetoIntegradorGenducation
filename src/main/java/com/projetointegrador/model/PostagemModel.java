@@ -38,12 +38,12 @@ public class PostagemModel {
 	@Size(max = 1000)
 	private String urlImg;
 
-	@ManyToOne(cascade = CascadeType.REMOVE)
+	@ManyToOne
 	@JoinColumn(name = "fk_tema")
 	@JsonIgnoreProperties("postagens")
 	private TemaModel tema;
 
-	@ManyToOne(cascade = CascadeType.REMOVE)
+	@ManyToOne
 	@JoinColumn(name = "fk_usuario")
 	@JsonIgnoreProperties("postagens")
 	private UsuarioModel usuario;
