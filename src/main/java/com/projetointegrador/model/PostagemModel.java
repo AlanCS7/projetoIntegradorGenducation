@@ -1,9 +1,7 @@
 package com.projetointegrador.model;
 
-import java.time.LocalDateTime;
 import java.util.Date;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -33,6 +31,12 @@ public class PostagemModel {
 	@NotBlank
 	@Size(min = 10, max = 500)
 	private String postagem;
+
+	@NotBlank
+	private String subtema;
+
+	@NotBlank
+	private String escolaridade;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date date = new java.sql.Date(System.currentTimeMillis());
@@ -74,6 +78,22 @@ public class PostagemModel {
 		this.postagem = postagem;
 	}
 
+	public String getSubtema() {
+		return subtema;
+	}
+
+	public void setSubtema(String subtema) {
+		this.subtema = subtema;
+	}
+
+	public String getEscolaridade() {
+		return escolaridade;
+	}
+
+	public void setEscolaridade(String escolaridade) {
+		this.escolaridade = escolaridade;
+	}
+	
 	public Date getDate() {
 		return date;
 	}

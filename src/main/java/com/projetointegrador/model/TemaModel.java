@@ -12,7 +12,6 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-
 @Entity
 @Table(name = "tb_tema")
 public class TemaModel {
@@ -23,12 +22,6 @@ public class TemaModel {
 
 	@NotBlank
 	private String tema;
-	
-	@NotBlank
-	private String subtema;
-	
-	@NotBlank
-	private String escolaridade;
 
 	@OneToMany(mappedBy = "tema", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("tema")
@@ -50,22 +43,6 @@ public class TemaModel {
 		this.tema = tema;
 	}
 
-	public String getSubtema() {
-		return subtema;
-	}
-
-	public void setSubtema(String subtema) {
-		this.subtema = subtema;
-	}
-
-	public String getEscolaridade() {
-		return escolaridade;
-	}
-
-	public void setEscolaridade(String escolaridade) {
-		this.escolaridade = escolaridade;
-	}
-
 	public List<PostagemModel> getPostagens() {
 		return postagens;
 	}
@@ -73,7 +50,5 @@ public class TemaModel {
 	public void setPostagens(List<PostagemModel> postagens) {
 		this.postagens = postagens;
 	}
-
-
 
 }
