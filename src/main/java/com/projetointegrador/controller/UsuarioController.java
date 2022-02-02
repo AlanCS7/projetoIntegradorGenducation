@@ -34,6 +34,11 @@ public class UsuarioController {
 		return services.registerUser(newUser);
 	}
 	
+	@PutMapping("/atualizar")
+	public ResponseEntity<UsuarioModel> atualizar(@Valid @RequestBody UsuarioModel newUser){
+		return services.atualizar(newUser);
+	}
+	
 	@PutMapping("/logar")
 	public ResponseEntity<UsuarioCredenciaisDTO> credentials(@Valid @RequestBody UsuarioLoginDTO user){
 		return services.getCredentials(user);

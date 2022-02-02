@@ -61,6 +61,25 @@ public class UserServices {
 		}
 	}
 	
+	public ResponseEntity<UsuarioModel> atualizar(@Valid UsuarioModel newUser){
+		Optional<UsuarioModel> optional = repository.findByEmail(newUser.getEmail());
+		
+		if (optional.isPresent()) {
+			
+			optional.get().setToken(generatorToken(optional.get().getEmail(), newUser.getSenha()));
+			optional.get().setNomeCompleto(newUser.getNomeCompleto());
+			optional.get().setSenha(encryptPassword(newUser.getSenha()));
+			optional.get().setTipo(newUser.getTipo());
+			
+			return ResponseEntity.status(201).body(repository.save(optional.get()));
+		}
+			else {
+				throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Erro ao atualizar!");
+			
+			}
+		}
+
+	
 	public ResponseEntity<UsuarioCredenciaisDTO> getCredentials(@Valid UsuarioLoginDTO userDto) {
 		return repository.findByEmail(userDto.getEmail()).map(resp -> {
 			BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
