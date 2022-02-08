@@ -16,15 +16,18 @@ public class UsuarioRegistroDTO {
 	private @NotBlank @Size(min = 5, max = 30) String senha;
 
 	private @NotBlank String tipo;
+	
+	private String foto;
 
 	public UsuarioRegistroDTO() {
 	}
 
-	public UsuarioRegistroDTO(String email, String nomeCompleto, String senha, String tipo) {
+	public UsuarioRegistroDTO(String email, String nomeCompleto, String senha, String tipo, String foto) {
 		this.email = email;
 		this.nomeCompleto = nomeCompleto;
 		this.senha = senha;
 		this.tipo = tipo;
+		this.foto = foto;
 	}
 
 	public String getEmail() {
@@ -58,4 +61,13 @@ public class UsuarioRegistroDTO {
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
+
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
+	}
+	
 }

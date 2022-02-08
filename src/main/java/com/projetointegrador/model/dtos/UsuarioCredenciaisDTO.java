@@ -5,16 +5,19 @@ public class UsuarioCredenciaisDTO {
 	private String email;
 	private String nomeCompleto;
 	private String tipo;
+	private String foto;
 	private String token;
 	private String tokenBasic;
 
 	public UsuarioCredenciaisDTO() {
 	}
 
-	public UsuarioCredenciaisDTO(String email, String nomeCompleto, String tipo, String token, String tokenBasic) {
+	public UsuarioCredenciaisDTO(String email, String nomeCompleto, String tipo, String foto, String token,
+			String tokenBasic) {
 		this.email = email;
 		this.nomeCompleto = nomeCompleto;
 		this.tipo = tipo;
+		this.foto = foto;
 		this.token = token;
 		this.tokenBasic = tokenBasic;
 	}
@@ -57,6 +60,14 @@ public class UsuarioCredenciaisDTO {
 
 	public void setTokenBasic(String tokenBasic) {
 		this.tokenBasic = tokenBasic;
+	}
+
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
 	}
 
 }

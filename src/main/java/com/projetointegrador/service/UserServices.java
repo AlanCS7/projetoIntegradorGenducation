@@ -57,6 +57,7 @@ public class UserServices {
 			user.setToken(generatorToken(newUser.getEmail(), newUser.getSenha()));
 			user.setSenha(encryptPassword(newUser.getSenha()));
 			user.setTipo(newUser.getTipo());
+			user.setFoto(newUser.getFoto());
 			return ResponseEntity.status(201).body(repository.save(user));
 		}
 	}
@@ -70,6 +71,7 @@ public class UserServices {
 			optional.get().setNomeCompleto(newUser.getNomeCompleto());
 			optional.get().setSenha(encryptPassword(newUser.getSenha()));
 			optional.get().setTipo(newUser.getTipo());
+			optional.get().setFoto(newUser.getFoto());
 			
 			return ResponseEntity.status(201).body(repository.save(optional.get()));
 		}
@@ -90,6 +92,7 @@ public class UserServices {
 				credentials.setEmail(resp.getEmail());
 				credentials.setNomeCompleto(resp.getNomeCompleto());
 				credentials.setTipo(resp.getTipo());
+				credentials.setFoto(resp.getFoto());
 				credentials.setToken(resp.getToken());
 				credentials.setTokenBasic(generatorTokenBasic(userDto.getEmail(), userDto.getSenha()));
 				
